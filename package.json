@@ -3,13 +3,28 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "format": "prettier --write .",
+    "lint:fix": "prettier --check --write . && eslint . --fix",
+    "lint": "prettier --check . && eslint .",
+    "dev": "bun run --watch src/index.ts",
+    "openapi-ts": "openapi-ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "elysia": "latest"
+    "elysia": "latest",
+    "escpos": "^2.4.4",
+    "escpos-print": "^2.0.0",
+    "receiptio": "^2.1.2"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@eslint/js": "^9.29.0",
+    "@hey-api/openapi-ts": "^0.73.0",
+    "@types/escpos": "^2.5.5",
+    "bun-types": "latest",
+    "eslint": "^9.29.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0"
   },
-  "module": "src/index.js"
+  "module": "src/index.ts"
 }
