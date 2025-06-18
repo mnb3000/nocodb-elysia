@@ -14,18 +14,15 @@ export const apiRouter = new Elysia({ name: "api", prefix: "/api" })
         status("Unauthorized");
       }
       console.log(body.data.rows);
-      const item = body.data.rows[0];
+      const rows = body.data.rows ?? [];
 
-      printerService.print(item);
+      printerService.print(rows[0]);
 
       status(200);
     },
     {
       headers: nocoDbWebhookHeadersSchema,
       body: inventoryWebhookResponseSchema,
-      beforeHandle({ status, headers }) {
-        if (headers["user-agent"] !== "nocodb") status(403, "Forbidden");
-      },
     },
   )
   .onError(({ code, error }) => {

@@ -7,8 +7,13 @@ const app = new Elysia()
   .get("/", ({ status }) => status("I'm a teapot"));
 
 export default {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async fetch(request: Request, _env: Env, _ctx: Context): Promise<Response> {
+  async fetch(
+    request: Request,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    env: Env,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ctx: Context,
+  ): Promise<Response> {
     return await app.fetch(request);
   },
 };

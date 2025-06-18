@@ -1,10 +1,17 @@
 # wrangler.toml
 
 name = "nocodb-elysia"
-compatibility_date = "2025-05-01"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-06-08"
+compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
 
-routes = [{ pattern = "api.myk.rest", custom_domain = true }]
+routes = [
+  { pattern = "api.myk.rest", custom_domain = true },
+  { pattern = "inv.myk.rest/print", zone_name = "myk.rest" },
+]
+
+[observability]
+enabled = true
+head_sampling_rate = 1 # optional. default = 1.
 
 # [vars]
 # MY_VAR = "my-variable"

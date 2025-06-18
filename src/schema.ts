@@ -59,7 +59,7 @@ export const inventoryWebhookRowSchema = t.Optional(
         Name: t.String(),
       }),
     ),
-    Storage: t.Optional(
+    Storage: t.Nullable(
       t.Object({
         Id: t.Number(),
         Title: t.String(),
@@ -81,7 +81,7 @@ export const inventoryWebhookResponseSchema = t.Object({
   data: t.Object({
     table_id: t.String(),
     table_name: t.String(),
-    rows: t.Nullable(t.Array(inventoryWebhookRowSchema)),
+    rows: t.Array(inventoryWebhookRowSchema),
   }),
 });
 

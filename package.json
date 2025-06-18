@@ -8,20 +8,15 @@
     "lint": "prettier --check . && eslint .",
     "dev": "bun run --watch src/index.ts",
     "deploy": "wrangler deploy --minify src/index.ts",
-    "openapi-ts": "openapi-ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "elysia": "latest",
-    "escpos": "^2.4.4",
-    "escpos-print": "^2.0.0",
     "receiptio": "^2.1.2",
     "wrangler": "^4.20.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
-    "@hey-api/openapi-ts": "^0.73.0",
-    "@types/escpos": "^2.5.5",
     "bun-types": "latest",
     "eslint": "^9.29.0",
     "prettier": "^3.5.3",
