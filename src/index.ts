@@ -1,10 +1,6 @@
-import { Context, Elysia } from "elysia";
-import { apiRouter } from "./api";
+import { Context } from "elysia";
 import { Env } from "bun";
-
-const app = new Elysia()
-  .use(apiRouter)
-  .get("/", ({ status }) => status("I'm a teapot"));
+import { app } from "./app";
 
 export default {
   async fetch(
