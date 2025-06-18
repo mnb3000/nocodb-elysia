@@ -39,27 +39,33 @@ export const inventoryWebhookRowSchema = t.Optional(
     Connectors: t.Nullable(t.String()),
     Manufacturer: t.Nullable(t.String()),
     Description: t.Nullable(t.String()),
-    Photo: t.Array(attachmentSchema),
+    Photo: t.Optional(t.Array(attachmentSchema)),
     Status: inventoryStatusSchema,
     // "QR Code": t.Optional(t.String()),
     CreatedAt: t.Date(),
-    UpdatedAt: t.Date(),
+    UpdatedAt: t.Nullable(t.Date()),
     "Created time": t.Date(),
-    "Last modified time": t.Date(),
-    "Last modified by": userDisplaySchema,
+    "Last modified time": t.Nullable(t.Date()),
+    "Last modified by": t.Nullable(userDisplaySchema),
     "Created by": userDisplaySchema,
     "Print Label": t.Unknown(),
     "Asset ID": t.Nullable(t.String()),
     "Asset URL": t.Nullable(t.String({ format: "uri" })),
     "QR Code": t.Nullable(t.String({ format: "uri" })),
     "Room Number": t.Nullable(t.Number()),
-    Room: t.Nullable(
+    Room: t.Optional(
       t.Object({
         Id: t.Number(),
         Name: t.String(),
       }),
     ),
-    Owners: t.Nullable(t.Number()),
+    Storage: t.Optional(
+      t.Object({
+        Id: t.Number(),
+        Title: t.String(),
+      }),
+    ),
+    Owners: t.Optional(t.Number()),
     "Owner Users": t.Array(t.String()),
     "Related Assets": t.Nullable(t.Number()),
     Inventories: t.Nullable(t.Number()),
@@ -75,7 +81,7 @@ export const inventoryWebhookResponseSchema = t.Object({
   data: t.Object({
     table_id: t.String(),
     table_name: t.String(),
-    rows: t.Array(inventoryWebhookRowSchema),
+    rows: t.Nullable(t.Array(inventoryWebhookRowSchema)),
   }),
 });
 

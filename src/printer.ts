@@ -5,7 +5,14 @@ import { mapUserIdToName } from "./utils";
 
 type PrintItem = Pick<
   InventoryWebhookRow,
-  "Name" | "Asset ID" | "Asset URL" | "Owner Users" | "Tags" | "Room" | "Id"
+  | "Name"
+  | "Asset ID"
+  | "Asset URL"
+  | "Owner Users"
+  | "Tags"
+  | "Room"
+  | "Id"
+  | "Storage"
 >;
 
 const labelTemplate = (
@@ -14,11 +21,12 @@ const labelTemplate = (
 \\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-
 ^^^"${item["Asset ID"]}
 \\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-\\-
-{w:10,*}
+{w:8,*}
 | "Name:|"${item.Name}|
 | "Tags:|${item.Tags}|
 | "Room:|${item.Room?.Name}|
 | "Owner:|${mapUserIdToName(item["Owner Users"][0])}|
+| "Storage:|${item.Storage?.Title}|
 {w:*}
 `;
 
