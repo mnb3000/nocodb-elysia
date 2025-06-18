@@ -33,10 +33,10 @@ const labelTemplate = (
 class PrinterService {
   async print(item: PrintItem) {
     console.log("printing");
-    await receiptio.print(
-      labelTemplate(item),
-      " -d 192.168.0.112 -p escpos -n -c 32",
-    );
+    // await receiptio.print(
+    //   labelTemplate(item),
+    //   " -d 192.168.0.112 -p escpos -n -c 32",
+    // );
   }
 }
 
