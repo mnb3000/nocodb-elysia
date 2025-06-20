@@ -85,6 +85,9 @@ export const inventoryWebhookResponseSchema = t.Object({
   }),
 });
 
-export const nocoDbWebhookHeadersSchema = t.Object({
-  "user-agent": t.String(),
-});
+export const nocoDbWebhookHeadersSchema = t.Object(
+  {
+    "user-agent": t.String(),
+  },
+  { additionalProperties: true },
+);
