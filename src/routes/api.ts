@@ -2,8 +2,8 @@ import Elysia from "elysia";
 import {
   inventoryWebhookResponseSchema,
   nocoDbWebhookHeadersSchema,
-} from "./schema";
-import { printerService } from "./printer";
+} from "../schema";
+import { printerService } from "../services";
 
 export const apiRouter = new Elysia({ name: "api", prefix: "/api" })
   .use(printerService)

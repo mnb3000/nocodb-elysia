@@ -1,5 +1,5 @@
 import Elysia from "elysia";
-import { apiRouter } from "./api";
+import { apiRouter } from "./routes/api";
 
 export const app = new Elysia({ aot: false })
   .onError(({ code, error }) => {
