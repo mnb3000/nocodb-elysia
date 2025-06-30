@@ -24,7 +24,7 @@ class PrinterService {
     console.log("printing");
     await receiptio.print(
       labelTemplate(item),
-      " -d 100.96.0.2 -p escpos -n -c 32",
+      " -d 100.97.37.83 -p escpos -n -c 32",
     );
   }
 }

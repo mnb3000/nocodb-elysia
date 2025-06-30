@@ -19,6 +19,8 @@ export type Status = (typeof STATUS)[keyof typeof STATUS];
 export const LABEL_STATUS = {
   labeled: "Labeled",
   notLabeled: "Not Labeled",
+  damaged: "Damaged",
+  unreadableQR: "Unreadable QR",
 } as const;
 
 export type LabelStatus = (typeof LABEL_STATUS)[keyof typeof LABEL_STATUS];
