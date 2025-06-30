@@ -51,8 +51,8 @@ export const inventoryWebhookRowSchema = t.Optional(
     "Created by": userDisplaySchema,
     "Print Label": t.Unknown(),
     "Asset ID": t.Nullable(t.String()),
-    "Asset URL": t.Nullable(t.String({ format: "uri" })),
-    "QR Code": t.Nullable(t.String({ format: "uri" })),
+    "Asset URL": t.Nullable(t.String()),
+    "QR Code": t.Nullable(t.String()),
     "Room Number": t.Nullable(t.Number()),
     Room: t.Optional(
       t.Object({
